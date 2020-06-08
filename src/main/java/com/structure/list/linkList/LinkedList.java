@@ -1,6 +1,6 @@
-package com.structure.linkList;
+package com.structure.list.linkList;
 
-import com.structure.AbstractList;
+import com.structure.list.AbstractList;
 
 /**
  * 手写LinkedList，对标{@link java.util.LinkedList}

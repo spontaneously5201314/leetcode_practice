@@ -1,8 +1,6 @@
-package com.structure.dynamicArray;
+package com.structure.list.dynamicArray;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author 洪飞

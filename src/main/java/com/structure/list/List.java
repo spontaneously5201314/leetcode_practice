@@ -1,4 +1,4 @@
-package com.structure;
+package com.structure.list;
 
 /**
  * @author 洪飞

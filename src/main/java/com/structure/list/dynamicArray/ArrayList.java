@@ -1,6 +1,6 @@
-package com.structure.dynamicArray;
+package com.structure.list.dynamicArray;
 
-import com.structure.AbstractList;
+import com.structure.list.AbstractList;
 
 /**
  * 传统数组无法满足动态添加和删除数组中的数据，故手写一个动态数组，对标{@link java.util.ArrayList}
