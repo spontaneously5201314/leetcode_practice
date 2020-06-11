@@ -1,6 +1,8 @@
 package com.leetcode.树;
 
-public class TreeNode {
+import com.structure.tree.printer.BinaryTreeInfo;
+
+public class TreeNode implements BinaryTreeInfo {
     public int val;
     public TreeNode left;
     public TreeNode right;
@@ -16,5 +18,25 @@ public class TreeNode {
         this.val = val;
         this.left = left;
         this.right = right;
+    }
+
+    @Override
+    public Object root() {
+        return this;
+    }
+
+    @Override
+    public Object left(Object node) {
+        return (TreeNode) this.left;
+    }
+
+    @Override
+    public Object right(Object node) {
+        return (TreeNode) this.right;
+    }
+
+    @Override
+    public Object string(Object node) {
+        return val + "_" + left.val + "_" + right.val;
     }
 }

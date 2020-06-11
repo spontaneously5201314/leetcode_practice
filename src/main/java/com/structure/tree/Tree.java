@@ -24,11 +24,26 @@ public interface Tree<E> {
     boolean isEmpty();
 
     /**
+     * 判断树中是否有节点的值等于给定值
+     *
+     * @param element 给定的值
+     * @return true表示存在，false表示不存在
+     */
+    boolean contains(E element);
+
+    /**
      * 在树中添加节点
      *
      * @param element 待添加的值
      */
     void add(E element);
+
+    /**
+     * 删除树中的节点
+     *
+     * @param element 被删除节点的值
+     */
+    void remove(E element);
 
     /**
      * 清空树
@@ -70,9 +85,10 @@ public interface Tree<E> {
     /**
      * 获取树的高度
      *
+     * @param iter true表示采用迭代方式获取树的高度，false表示采用递归方式获取树的高度
      * @return 返回该树的高度
      */
-    int height();
+    int height(boolean iter);
 
     /**
      * 获取某个节点的前驱节点
