@@ -26,18 +26,38 @@ import com.leetcode.树.TreeNode;
  */
 public class _108_将有序数组转换为二叉搜索树 {
 
+    int[] nums;
+
     public TreeNode sortedArrayToBST(int[] nums) {
-        // TODO: 2020/6/11 尚未完成，明天继续
-        return insertTreeNode(nums, 0, nums.length);
+        this.nums = nums;
+        return helperLeft(0, nums.length - 1);
     }
 
-    private TreeNode insertTreeNode(int[] nums, int start, int end) {
-        int middleIndex = (start + end) / 2;
-        TreeNode root = new TreeNode(nums[middleIndex]);
+    public TreeNode helperLeft(int left, int right) {
+        if (left > right) return null;
 
-        root.left = insertTreeNode(nums, start, middleIndex - 1);
-        root.right = insertTreeNode(nums, middleIndex + 1, end);
+        // always choose left middle node as a root
+        int p = (left + right) / 2;
 
+        // inorder traversal: left -> node -> right
+        TreeNode root = new TreeNode(nums[p]);
+        root.left = helperLeft(left, p - 1);
+        root.right = helperLeft(p + 1, right);
         return root;
     }
+
+    public TreeNode helperRight(int left, int right) {
+        if (left > right) return null;
+
+        // always choose right middle node as a root
+        int p = (left + right) / 2;
+        if ((left + right) % 2 == 1) ++p;
+
+        // inorder traversal: left -> node -> right
+        TreeNode root = new TreeNode(nums[p]);
+        root.left = helperRight(left, p - 1);
+        root.right = helperRight(p + 1, right);
+        return root;
+    }
+
 }

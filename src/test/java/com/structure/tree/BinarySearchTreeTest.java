@@ -1,5 +1,6 @@
 package com.structure.tree;
 
+import com.structure.iter.Visitor;
 import com.structure.tree.printer.BinaryTrees;
 import org.junit.jupiter.api.Test;
 
@@ -33,9 +34,9 @@ public class BinarySearchTreeTest {
             tree.add(new Random().nextInt(20));
         }
         BinaryTrees.println(tree);
-        tree.preOrder(new Tree.Visitor<Integer>() {
+        tree.preOrder(new Visitor<Integer>() {
             @Override
-            boolean visit(Integer element) {
+            public boolean visit(Integer element) {
                 System.out.println(element);
                 return false;
             }
@@ -49,9 +50,9 @@ public class BinarySearchTreeTest {
             tree.add(new Random().nextInt(20));
         }
         BinaryTrees.println(tree);
-        tree.inOrder(new Tree.Visitor<Integer>() {
+        tree.inOrder(new Visitor<Integer>() {
             @Override
-            boolean visit(Integer element) {
+            public boolean visit(Integer element) {
                 System.out.println(element);
                 return false;
             }
@@ -65,9 +66,9 @@ public class BinarySearchTreeTest {
             tree.add(new Random().nextInt(20));
         }
         BinaryTrees.println(tree);
-        tree.postOrder(new Tree.Visitor<Integer>() {
+        tree.postOrder(new Visitor<Integer>() {
             @Override
-            boolean visit(Integer element) {
+            public boolean visit(Integer element) {
                 System.out.println(element);
                 return false;
             }
@@ -81,9 +82,9 @@ public class BinarySearchTreeTest {
             tree.add(new Random().nextInt(20));
         }
         BinaryTrees.println(tree);
-        tree.levelOrder(new Tree.Visitor<Integer>() {
+        tree.levelOrder(new Visitor<Integer>() {
             @Override
-            boolean visit(Integer element) {
+            public boolean visit(Integer element) {
                 System.out.println(element);
                 return false;
             }

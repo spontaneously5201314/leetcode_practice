@@ -1,5 +1,6 @@
 package com.structure.tree;
 
+import com.structure.iter.Visitor;
 import lombok.Data;
 
 /**
@@ -169,20 +170,5 @@ public interface Tree<E> {
 //                    ", parent=" + parent.element +
                     '}';
         }
-    }
-
-    abstract class Visitor<E> {
-        /**
-         * 该遍历操作是否是停止
-         */
-        boolean stop;
-
-        /**
-         * 对树中的节点进行遍历可以执行的操作
-         *
-         * @param element 遍历中待操作的节点的数据
-         * @return 返回true就表示停止遍历，false表示可以继续遍历下一个节点
-         */
-        abstract boolean visit(E element);
     }
 }

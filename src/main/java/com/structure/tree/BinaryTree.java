@@ -1,5 +1,6 @@
 package com.structure.tree;
 
+import com.structure.iter.Visitor;
 import com.structure.tree.printer.BinaryTreeInfo;
 
 import java.util.LinkedList;
@@ -32,6 +33,17 @@ public abstract class BinaryTree<E> implements Tree<E>, BinaryTreeInfo {
     public void clear() {
         root = null;
         size = 0;
+    }
+
+    /**
+     * 创建节点
+     *
+     * @param element 被创建节点的元素
+     * @param parent  被创建节点的父节点
+     * @return 返回被创建的节点
+     */
+    protected Node<E> createNode(E element, Node<E> parent) {
+        return new Node<>(element, parent);
     }
 
     /**
@@ -359,11 +371,6 @@ public abstract class BinaryTree<E> implements Tree<E>, BinaryTreeInfo {
 
     @Override
     public Object string(Object node) {
-        Node<E> tempNode = (Node<E>) node;
-        String parentString = "null";
-        if (tempNode.parent != null) {
-            parentString = tempNode.parent.element.toString();
-        }
-        return tempNode.element + "_p(" + parentString + ")";
+        return node;
     }
 }

@@ -21,6 +21,15 @@ public class TreeNode implements BinaryTreeInfo {
     }
 
     @Override
+    public String toString() {
+        return "TreeNode{" +
+                "val=" + val +
+                ", left=" + left +
+                ", right=" + right +
+                '}';
+    }
+
+    @Override
     public Object root() {
         return this;
     }
