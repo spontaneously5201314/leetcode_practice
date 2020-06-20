@@ -1,12 +1,9 @@
 package com.leetcode.树.二叉树;
 
 import com.leetcode.树.TreeNode;
-import com.structure.list.List;
-import com.structure.list.dynamicArray.ArrayList;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Stack;
 
 /**
  * 给定一个二叉树，检查它是否是镜像对称的。

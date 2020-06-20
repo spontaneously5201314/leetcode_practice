@@ -1,8 +1,8 @@
 package com.leetcode.树.二叉搜索树;
 
 import com.leetcode.树.TreeNode;
-import com.structure.list.List;
-import com.structure.list.linkList.LinkedList;
+import com.base.structure.list.List;
+import com.base.structure.list.linkList.LinkedList;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

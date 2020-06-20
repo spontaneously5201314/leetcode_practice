@@ -1,6 +1,6 @@
 package com.leetcode.树;
 
-import com.structure.tree.printer.BinaryTreeInfo;
+import com.base.structure.tree.printer.BinaryTreeInfo;
 
 public class TreeNode implements BinaryTreeInfo {
     public int val;
