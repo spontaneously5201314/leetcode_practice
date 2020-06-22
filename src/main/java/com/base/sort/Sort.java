@@ -1,5 +1,9 @@
 package com.base.sort;
 
+import com.base.sort.counting.CountingSort;
+import com.base.sort.selection.SelectionSort;
+import com.base.sort.shell.ShellSort;
+
 import java.text.DecimalFormat;
 
 /**
@@ -87,9 +91,9 @@ public abstract class Sort<T extends Comparable<T>> implements Comparable<T> {
 
     private boolean isStable() {
 //        if (this instanceof RadixSort) return true;
-//        if (this instanceof CountingSort) return true;
-//        if (this instanceof ShellSort) return false;
-//        if (this instanceof SelectionSort) return false;
+        if (this instanceof CountingSort) return true;
+        if (this instanceof ShellSort) return false;
+        if (this instanceof SelectionSort) return false;
         StableCompare[] stableCompares = new StableCompare[20];
         for (int i = 0; i < stableCompares.length; i++) {
             stableCompares[i] = new StableCompare(i * 10, 10);

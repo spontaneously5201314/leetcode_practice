@@ -3,6 +3,7 @@ package com.base.sort;
 import com.base.sort.bubble.BubbleSort1;
 import com.base.sort.bubble.BubbleSort2;
 import com.base.sort.bubble.BubbleSort3;
+import com.base.sort.counting.CountingSort;
 import com.base.sort.heap.HeapSort;
 import com.base.sort.insertion.InsertionSort1;
 import com.base.sort.insertion.InsertionSort2;
@@ -35,7 +36,8 @@ public class SortCompare {
 //                new InsertionSort3(),
 //                new MergeSort(),
 //                new QuickSort(),
-                new ShellSort()
+//                new ShellSort(),
+                new CountingSort()
         );
     }
 
