@@ -128,7 +128,8 @@ public class Trie<V> {
         HashMap<Character, Node<V>> children;
         Character character;
         V value;
-        boolean word; // 是否为单词的结尾（是否为一个完整的单词）
+        // 是否为单词的结尾（是否为一个完整的单词）
+        boolean word;
 
         public Node(Node<V> parent) {
             this.parent = parent;
