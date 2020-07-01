@@ -1,4 +1,4 @@
-package com.leetcode;
+package com.leetcode.字符串;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,7 +26,7 @@ import java.util.Map;
  * @author 洪飞
  * @date 2020/5/25
  */
-public class Num0003 {
+public class _3_无重复字符的最长子串 {
 
     public static void main(String[] args) {
         String str = "abcabcbb";
