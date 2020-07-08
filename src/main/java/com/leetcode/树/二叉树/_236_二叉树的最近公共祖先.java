@@ -50,15 +50,17 @@ public class _236_二叉树的最近公共祖先 {
         root.right.right = new TreeNode(8);
 
         _236_二叉树的最近公共祖先 v = new _236_二叉树的最近公共祖先();
-//        TreeNode treeNode = v.lowestCommonAncestor(root, new TreeNode(5), new TreeNode(1));
-        TreeNode treeNode = v.getAncestorByLevel(root, new TreeNode(5), new TreeNode(1));
+        TreeNode treeNode = v.lowestCommonAncestor(root, new TreeNode(5), new TreeNode(1));
+//        TreeNode treeNode = v.getAncestorByLevel(root, new TreeNode(5), new TreeNode(1));
         System.out.println(treeNode.toString());
     }
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        // TODO: 2020/6/16  
-        inOrder(root, p, q, new HashSet<>());
-        return ancestorNode;
+        if (root == null || root == p || root == q) return root;
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+        if (left != null && right != null) return root;
+        return left != null ? left : right;
     }
 
     private Set<Integer> inOrder(TreeNode node, TreeNode p, TreeNode q, Set<Integer> result) {

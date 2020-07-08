@@ -1,5 +1,7 @@
 package com.leetcode.动态规划;
 
+import java.util.Arrays;
+
 /**
  * 给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
  * <p>
@@ -26,13 +28,44 @@ package com.leetcode.动态规划;
  */
 public class _121_买卖股票的最佳时机 {
 
+    public int maxProfitWithDp(int[] prices) {
+        if (prices == null || prices.length == 0) return 0;
+
+        int[] temp = new int[prices.length - 1];
+        for (int i = 1; i < prices.length; i++) {
+            temp[i - 1] = prices[i] - prices[i];
+        }
+        System.out.println(Arrays.toString(temp));
+        int dp = temp[0];
+        int maxProfit = dp;
+        for (int i = 1; i < temp.length; i++) {
+            if (dp > 0) {
+                dp = dp + temp[i];
+            } else {
+                dp = temp[i];
+            }
+            maxProfit = Math.max(maxProfit, dp);
+        }
+        return maxProfit;
+    }
+
     public int maxProfit(int[] prices) {
+        if (prices == null || prices.length == 0) return 0;
         int length = prices.length;
-        int[][] dp = new int[length][length];
 
+        //买入股票的最低价格
+        int minPrice = prices[0];
+        //卖出获取的最大利润
+        int maxProfit = 0;
+        //扫描
+        for (int i = 1; i < length; i++) {
+            if (prices[i] < minPrice) {
+                minPrice = prices[i];
+            } else {
+                maxProfit = Math.max(maxProfit, prices[i] - minPrice);
+            }
+        }
 
-
-
-        return 0;
+        return maxProfit;
     }
 }
