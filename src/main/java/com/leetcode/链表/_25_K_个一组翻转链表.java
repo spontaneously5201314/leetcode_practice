@@ -29,18 +29,35 @@ package com.leetcode.链表;
 public class _25_K_个一组翻转链表 {
 
     public ListNode reverseKGroup(ListNode head, int k) {
-        // TODO: 2020/6/15  
-        return null;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
+        ListNode pre = dummy;
+        ListNode end = dummy;
+
+        while (end.next != null) {
+            for (int i = 0; i < k && end != null; i++) end = end.next;
+            if (end == null) break;
+            ListNode start = pre.next;
+            ListNode next = end.next;
+            end.next = null;
+            pre.next = reverse(start);
+            start.next = next;
+            pre = start;
+            end = pre;
+        }
+        return dummy.next;
     }
 
-    private ListNode reverse(ListNode head, int start, int end) {
-        if (start >= end) return head;
-        head.next = reverse(head.next, start + 1, end);
-        if (end - start == 1) {
-            ListNode temp = head.next.next;
-            head.next.next = head;
-            head.next = temp;
+    private ListNode reverse(ListNode head) {
+        ListNode pre = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode temp = curr.next;
+            curr.next = pre;
+            pre = curr;
+            curr = temp;
         }
-        return null;
+        return pre;
     }
 }
